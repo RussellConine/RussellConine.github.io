@@ -34,18 +34,34 @@ img:hover {
     }
 }
 
-
-iframe {
+/* Video Elements */
+/* Make container for iframe so we can adjust its size based on media query */
+#iframe_container {
     display: block;
     width: 600px;
     height: 340px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    border: none;
     box-shadow: 5px 5px 5px #222;
 }
 
+iframe {
+    display: flexbox;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* decrease video size for screens smaller than 600px*/
+@media screen and (max-width: 600px) {
+    #iframe_container {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/* Text Elements */
 p {
     padding-left: 2em;
 }
@@ -54,16 +70,16 @@ h1 {
     padding-left: 1rem;
 }
 
+/* Footer */
 footer {
     padding: 1% 1% 0% 1%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
     background-color: white;
     text-align: right;
 }
+/***** END GENERAL STYLING *****/
 
 
-/* ---------------------------------------------
-        NAVBAR          
---------------------------------------------- */
+/***** NAVBAR  *****/
 .Navbar {
     overflow: hidden; /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
     background-color: black; /* This colors the navbar black */
@@ -98,12 +114,6 @@ footer {
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 2px;
-}
-
-/* moveNavText animation effect for moving the navbar text from above the view to the navbar */
-@keyframes moveNavText {
-    from {top: -5vw;} /* This sets the navbar text 100% above the viewport */
-    to {top: 0vw;} /* This lowers the navbar text onto the navbar */
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -142,17 +152,10 @@ footer {
     background-color: rgb(19, 148, 19);
     color: rgb(247, 247, 247);
 }
-
-/* ---------------------------------------------
-        END NAVBAR          
---------------------------------------------- */
+/***** END NAVBAR STYLING *****/
 
 
-
-/* ---------------------------------------------
-        HOME        
---------------------------------------------- */
-
+/***** HOME STYLING*****/
 #Home {
     background: url(../images/cedars.jpg) no-repeat 50% 50%;
     background-attachment: fixed;
@@ -179,12 +182,10 @@ footer {
     font-variant: small-caps;
     font-size: x-large;
 }
+/***** END HOME STYLING*****/
 
 
-/* ---------------------------------------------
-        COLUMNS        
---------------------------------------------- */
-
+/***** COLUMNS STYLING *****/
 * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
     box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
 } 
@@ -206,7 +207,6 @@ footer {
     }
 }
 
-
 .Column_2 {
     float: left;
     width: 50%;
@@ -227,11 +227,9 @@ footer {
 	display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
 	clear: both; /* This clears any other elements from floating on the left or the right of an element */
 }
+/***** END COLUMNS STYLING *****/
 
-/* ---------------------------------------------
-        SPECIFIC IMAGES        
---------------------------------------------- */
-
+/***** GITHUB IMAGE EFFECT  *****/
 .GH_logo {
     transition: 0.4s;
     filter: invert(0);
@@ -242,12 +240,9 @@ footer {
     filter: invert(.9);
     scale: 1; /*override scaling of images. Doesn't look good with inverted colors*/
 }
+/***** END GITHUB IMAGE EFFECT  *****/
 
-
-
-/* ---------------------------------------------
-        CONTACT FORM STYLING     
---------------------------------------------- */
+/***** CONTACT FORM STYLING  *****/
 /* input[type=text] targets all text input sections of the contact form */
 input[type=text] {
     width: 100%; /* Each input box covers the full width of the container */
@@ -293,4 +288,4 @@ form {
     background-color: #f2f2f2; 
     padding: 10px; /* Adds padding to the contact form */
 }
-/***** END OF CONTACT FORM STYLING *****/
+/***** END CONTACT FORM STYLING *****/
